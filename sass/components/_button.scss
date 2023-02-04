@@ -1,0 +1,18 @@
+.button{
+    min-width: 100px;
+    min-height: 50px;
+    background-color: $color-quaternary;
+    @include flexStructureRow;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    color: $color-primary;
+    box-shadow: 0 5 5px $color-quaternary;
+    cursor: pointer;
+}
+
+.button:hover{
+    transform: scale(105%);
+    box-shadow: 0 0 10px $color-quaternary;
+}
+

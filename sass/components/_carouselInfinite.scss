@@ -1,0 +1,50 @@
+.carouselInfinite{
+    width: 100%;
+    height: 30vh;
+    padding: 1% 0 1% 0;
+    
+
+        .slidetrack{
+            width: auto;
+            height: 100%;
+            display: flex;
+            overflow: hidden;
+
+                .slide{
+                    min-width: 80vw;
+                    height: 100%;
+                    margin: 0 5px 0 5px;
+                    position: relative;
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        .textContainer{
+                            width: 100%;
+                            height: 20%;
+                            background-color: $color-primary-transparent;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            @include flexStructureRow;
+                            text-align: center;
+                            color: $color-secondary;
+                            border-top: 2px solid $color-primary-transparent;
+                        }
+                }
+        }
+
+}
+
+@media screen and (min-width: 800px){
+    .carouselInfinite{
+        .slidetrack{
+            .slide{
+                min-width: 600px;
+            }
+        }
+    }
+}

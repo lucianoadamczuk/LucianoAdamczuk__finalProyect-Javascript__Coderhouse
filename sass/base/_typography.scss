@@ -1,0 +1,24 @@
+.size-xxxl{
+    font-size: 5rem;
+}
+
+.size-xxl{
+    font-size: 3rem;
+}
+
+.size-xl{
+    font-size: 1.8rem;
+}
+
+.size-l{
+    font-size: 1.4rem;
+}
+
+@font-face {
+    font-family: fertigoPro;
+    src: url(/fonts/Fertigo_PRO.otf);
+}
+
+h1, h2, h3{
+    font-family: fertigoPro;
+}

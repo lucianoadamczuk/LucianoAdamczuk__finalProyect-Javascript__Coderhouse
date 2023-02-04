@@ -1,0 +1,253 @@
+header{
+    width: 100%;
+    height: 95vh;
+    position: relative;
+
+
+        .overlay{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: $color-tertiary;
+            opacity: 30%;
+        }
+
+        video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .textContainer{
+            width: 100%;
+            height: 60%;
+            background:linear-gradient(to top, $color-tertiary, rgba(255, 255, 255, 0));
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-align: center;
+            color: $color-primary;
+            padding-bottom: 50px;
+        }
+}
+
+.aboutUs{
+    background-color: $color-primary;
+
+        .textContainer{
+            position: relative;
+
+                .desktop__textSpan{
+                    display: none;
+                }
+
+                .desktop__extraContainer{
+                    width: 35vw;
+                    min-height: 15vh;
+                    height: auto;
+                    background: linear-gradient(to right, $color-quintary 30%,  $color-primary);
+                    display: none;
+                    position: absolute;
+                    right: 0;
+                    top: 30%;
+                    grid-template-columns: 30% 70%;
+                    grid-template-rows: 80% 20%;
+                    grid-template-areas:
+                    "svg text"
+                    "title text";
+
+                        svg{
+                            width: 80px;
+                            height: 80px;
+                            grid-area: svg;
+                            justify-self: center;
+                        }
+
+                        .title{
+                            grid-area: title;
+                            font-weight: bolder;
+                            text-align: center;
+                        }
+
+                        .text{
+                            grid-area: text;
+                            align-self: center;
+                        }
+                }
+
+                .desktop__extraContainer__2{
+                    @extend .desktop__extraContainer;
+                    width: 25vw;
+                    top: 60%;
+                }
+        }
+}
+
+.information__1{
+    background-color: $color-secondary;
+    position: relative;
+        .textContainer{
+            color: $color-primary;
+
+            .desktop__extraContainer{
+                width: 100%;
+                height: 30vh;
+                margin-top: 60px;
+                position: absolute;
+                left: 0;
+                display: none;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
+
+                    .itemsContainer{
+                        width: 100%;
+                        height: 100%;
+                        margin-left: 150%;
+                        display: none;
+                        align-items: center;
+                        overflow: hidden;
+
+                            .item{
+                                width: 120px;
+                                height: 120px;
+                                border-radius: 50%;
+                                background-color: $color-quaternary-variant;
+                                @include flexStructureRow;
+                                cursor: pointer;
+        
+                                    svg{
+                                        width: 50%;
+                                        height: 50%;
+                                    }
+                            }
+        
+                            .item:hover{
+                                transform: scale(105%);
+                                
+                            }
+                    }
+                    
+
+                    .desktop__button-mainlyCareers{
+                        width: 60px;
+                        height: 100%;
+                        background-color: $color-quaternary;
+                        position: absolute;
+                        right: 0;
+                        @include flexStructureRow;
+                        border-radius: 10px 0 0 10px;
+                        cursor: pointer;
+
+                            p{
+                                font-weight: bold;
+                                writing-mode: vertical-lr;
+                                text-align: center;
+                            }
+                    }
+
+                    .desktop__button-mainlyCareers:hover{
+                        width: 70px;
+                        transition: 0.5s;
+                    }
+            }
+        }
+}
+
+.information__2{
+    background-color: $color-secondary;
+    color: $color-primary;
+}
+
+.frequentQuestions{
+
+    .emptyDiv-1{
+        width: 100%;
+        height: 5px;
+        background-color: $color-secondary;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .questionContainer{
+        width: 100%;
+        height: 80px;
+        padding: 0 5% 0 5%;
+        background-color: $color-secondary;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $color-primary;
+        cursor: pointer;
+    }
+
+    .answerContainer{
+        width: 100%;
+        min-height: 50px;
+        height: auto;
+        padding: 0 10% 0 10%;
+        background-color: $color-quintary;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        color: $color-primary;
+        text-align: center;
+    }
+
+    .emptyDiv-2{
+        width: 100%;
+        height: 5px;
+        background-color: $color-secondary;
+        border-radius: 0 0 20px 20px;
+    }
+}
+
+@media screen and (min-width: 900px){
+    .aboutUs{
+        .textContainer{
+            display: grid;
+            grid-template-columns: 40% 60%;
+            grid-template-rows: 10% 90%;
+            grid-template-areas: 
+            "title desktop__extraContainer"
+            "text  desktop__extraContainer";
+
+            .title{
+                grid-area: title;
+            }
+
+            .text{
+                grid-area: text;
+            }
+
+            .desktop__textSpan{
+                display: flex;
+            }
+            
+            .desktop__extraContainer{
+                grid-area: desktop__extraContainer;
+                align-self:center;
+                display: grid;
+            }
+        }
+
+    }
+
+    .information__1{
+        background-color: $color-secondary;
+        position: relative;
+
+            .textContainer{
+
+                .desktop__extraContainer{
+                    display: flex;
+                        .desktop__button-mainlyCareers{
+                            display: flex;
+                        }
+                }
+            }
+    
+    }
+}

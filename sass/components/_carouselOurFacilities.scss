@@ -1,0 +1,61 @@
+.carouselOurFacilities{
+    width: 100%;
+    height: 20vh;
+    margin-top: 20%;
+    position: relative;
+
+        .slidetrack{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            overflow: hidden;
+            
+            img{
+                min-width: 80%;
+                height: 100%;
+                margin: 0 5px 0 5px;
+                object-fit: cover;
+            }
+
+            .sidesContainer{
+                width: 90%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 5%;
+                display: flex;
+                justify-content: space-between;
+                
+                    .side{
+                        width: 20%;
+                        height: 100%;
+                    }
+    
+                    .side-1{
+                        background:linear-gradient(to right, $color-tertiary, rgba(255, 255, 255, 0));
+                    }
+    
+                    .side-2{
+                        background:linear-gradient(to left, $color-tertiary, rgba(255, 255, 255, 0));
+                    }
+            }
+        }
+
+        .buttonsContainer{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            
+                .btn{
+                    width: 5%;
+                    height: 100%;
+                    background-color: $color-tertiary;
+                    @include flexStructureRow;
+                    cursor: pointer;
+                }
+        }
+}

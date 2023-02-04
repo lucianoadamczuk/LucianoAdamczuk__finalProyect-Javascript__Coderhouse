@@ -1,0 +1,80 @@
+.plataform__enter{
+    .contentContainer{
+        width: 100%;
+        min-height: 80vh;
+        @include flexStructureColumn;
+        position: relative;
+
+            .buttonsContainer{
+                .circle{
+                    width: 150px;
+                    height: 50px;
+                    background-color: $color-tertiary;
+                    @include flexStructureRow;
+                    color: $color-primary;
+                    margin: 5px 0 5px 0;
+                    cursor: pointer;
+                }
+    
+                .circleUp{
+                    border-top-left-radius: 100px;
+                    border-top-right-radius: 100px;
+                }
+    
+                .line{
+                    width: 100%;
+                    height: 1px;
+                    background-color: $color-tertiary;
+                    position: absolute;
+                    left: 0;
+                    top: 49.89%;
+                }
+    
+                .circleDown{
+                    border-bottom-left-radius: 100px;
+                    border-bottom-right-radius: 100px;
+                }
+    
+                .circle:hover{
+                    transform: scale(105%);
+                    background-color: $color-quaternary;
+                    transition: 0.2s;
+                }
+            }
+
+
+            .formSignUpContainer{
+                width: 100%;
+                min-height: 70vh;
+                margin: 40px 0 0 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                
+                .signUpForm{
+                    display: none;
+                }
+            }
+
+            .formLogInContainer{
+                @extend .formSignUpContainer;
+                margin: 0 0 40px 0;
+
+                .logInForm{
+                    display: flex;
+                }
+
+                .linksContainer{
+                    @include flexStructureColumn;
+                    
+                        a{
+                            margin-top: 5px;
+                            color: $color-tertiary;
+                        }
+                }
+            }
+    }
+}

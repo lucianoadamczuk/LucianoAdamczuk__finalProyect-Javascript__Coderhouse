@@ -1,0 +1,17 @@
+@import "./base/reset";
+@import "./base/typography";
+
+@import "./abstracts/colors";
+@import "./abstracts/mixins";
+
+@import "./layout/nav";
+@import "./layout/section";
+@import "./layout/footer";
+
+@import "./components/button";
+@import "./components/carouselInfinite";
+@import "./components/carouselOurFacilities";
+@import "./components/form";
+
+@import "./views/index";
+@import "./views/plataform__enter"
