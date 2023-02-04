@@ -42,7 +42,7 @@ nav {
   background-color: #593528;
   position: fixed;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   z-index: 100;
 }
@@ -55,12 +55,130 @@ nav .logoContainer {
   align-items: center;
   color: #F2ECEB;
 }
+nav .navMobileStyle {
+  width: 100%;
+  background-color: #593528;
+  position: absolute;
+  top: 50px;
+  display: none;
+  -webkit-animation-name: styleOpenMenu;
+          animation-name: styleOpenMenu;
+  -webkit-animation-duration: 0.3;
+          animation-duration: 0.3;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes styleOpenMenu {
+  from {
+    height: 0;
+  }
+  to {
+    height: 40px;
+  }
+}
+@keyframes styleOpenMenu {
+  from {
+    height: 0;
+  }
+  to {
+    height: 40px;
+  }
+}
 nav .linksContainer {
   width: calc(100% - 150px);
   height: 100%;
-}
-nav .linksContainer a {
   display: none;
+}
+nav .linksContainer .navLink {
+  display: none;
+  color: #F2ECEB;
+}
+nav .linksContainer .navLink:hover {
+  transform: scale(110%);
+  transition: 0.5s;
+}
+nav .linksContainer .plataform {
+  padding: 5px;
+  background-color: #3F6ABF;
+  border-radius: 10px;
+}
+nav .linksContainer .showNavLinks {
+  display: flex;
+  opacity: 0%;
+  -webkit-animation-name: showLinks;
+          animation-name: showLinks;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+@-webkit-keyframes showLinks {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 80%;
+  }
+  70% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    margin: 10px 0 10px 0;
+  }
+}
+@keyframes showLinks {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 80%;
+  }
+  70% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+    margin: 10px 0 10px 0;
+  }
+}
+nav .showMenu {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #593528;
+  border-radius: 20%;
+  -webkit-animation-name: showMenu;
+          animation-name: showMenu;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+@-webkit-keyframes showMenu {
+  from {
+    height: 0;
+  }
+  to {
+    height: 30vh;
+  }
+}
+@keyframes showMenu {
+  from {
+    height: 0;
+  }
+  to {
+    height: 30vh;
+  }
 }
 nav .hamburguerContainer {
   width: 80px;
@@ -69,6 +187,7 @@ nav .hamburguerContainer {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 nav .hamburguerContainer .stick {
   width: 40%;
@@ -83,15 +202,10 @@ nav .hamburguerContainer .stick {
     justify-content: right;
     align-items: center;
   }
-  nav .linksContainer a {
+  nav .linksContainer .navLink {
     display: flex;
     margin-right: 50px;
     color: #F2ECEB;
-  }
-  nav .linksContainer .plataform {
-    padding: 5px;
-    background-color: #3F6ABF;
-    border-radius: 10px;
   }
   nav .hamburguerContainer {
     display: none;
@@ -186,26 +300,35 @@ footer .legalsContainer .linksContainer a {
   width: 100%;
   height: 30vh;
   padding: 1% 0 1% 0;
+  display: flex;
+  overflow: scroll;
 }
-.carouselInfinite .slidetrack {
+.carouselInfinite .slidetracksContainer {
   width: auto;
   height: 100%;
   display: flex;
-  overflow: hidden;
 }
-.carouselInfinite .slidetrack .slide {
+.carouselInfinite .slidetracksContainer .slidetrack {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.carouselInfinite .slidetracksContainer .slidetrack .slide {
   min-width: 80vw;
   height: 100%;
-  margin: 0 5px 0 5px;
+  margin: 0 0 0 5px;
   position: relative;
 }
-.carouselInfinite .slidetrack .slide img {
+.carouselInfinite .slidetracksContainer .slidetrack .slide img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.carouselInfinite .slidetrack .slide .textContainer {
+.carouselInfinite .slidetracksContainer .slidetrack .slide .desktopIMG {
+  display: none;
+}
+.carouselInfinite .slidetracksContainer .slidetrack .slide .textContainer {
   width: 100%;
   height: 20%;
   background-color: rgba(242, 236, 235, 0.462745098);
@@ -220,9 +343,15 @@ footer .legalsContainer .linksContainer a {
   border-top: 2px solid rgba(242, 236, 235, 0.462745098);
 }
 
-@media screen and (min-width: 800px) {
-  .carouselInfinite .slidetrack .slide {
-    min-width: 600px;
+@media screen and (min-width: 900px) {
+  .carouselInfinite {
+    height: 50vh;
+  }
+  .carouselInfinite .slidetrack .slide .mobileIMG {
+    display: none;
+  }
+  .carouselInfinite .slidetrack .slide .desktopIMG {
+    display: flex;
   }
 }
 .carouselOurFacilities {
@@ -364,6 +493,7 @@ header .textContainer {
   height: 80px;
   grid-area: svg;
   justify-self: center;
+  align-self: center;
 }
 .aboutUs .textContainer .desktop__extraContainer .title, .aboutUs .textContainer .desktop__extraContainer__2 .title {
   grid-area: title;
@@ -469,15 +599,81 @@ header .textContainer {
 }
 .frequentQuestions .answerContainer {
   width: 100%;
-  min-height: 50px;
-  height: auto;
-  padding: 0 10% 0 10%;
   background-color: #BF6550;
   display: none;
   justify-content: center;
   align-items: center;
   color: #F2ECEB;
   text-align: center;
+}
+.frequentQuestions .showAnswerContainer {
+  display: flex;
+  -webkit-animation-name: showAnswerContainer;
+          animation-name: showAnswerContainer;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes showAnswerContainer {
+  from {
+    min-height: 0;
+    height: 0;
+  }
+  to {
+    min-height: 30vh;
+    height: auto;
+  }
+}
+@keyframes showAnswerContainer {
+  from {
+    min-height: 0;
+    height: 0;
+  }
+  to {
+    min-height: 30vh;
+    height: auto;
+  }
+}
+.frequentQuestions .showAnswer {
+  -webkit-animation-name: showAnswer;
+          animation-name: showAnswer;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes showAnswer {
+  0% {
+    display: none;
+    opacity: 0;
+    margin: 0;
+  }
+  50% {
+    display: flex;
+    opacity: 0;
+    margin: 5px 10px 5px 10px;
+  }
+  100% {
+    display: flex;
+    opacity: 100%;
+  }
+}
+@keyframes showAnswer {
+  0% {
+    display: none;
+    opacity: 0;
+    margin: 0;
+  }
+  50% {
+    display: flex;
+    opacity: 0;
+    margin: 5px 10px 5px 10px;
+  }
+  100% {
+    display: flex;
+    opacity: 100%;
+  }
 }
 .frequentQuestions .emptyDiv-2 {
   width: 100%;
@@ -490,7 +686,7 @@ header .textContainer {
   .aboutUs .textContainer {
     display: grid;
     grid-template-columns: 40% 60%;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 20% 80%;
     grid-template-areas: "title desktop__extraContainer" "text  desktop__extraContainer";
   }
   .aboutUs .textContainer .title {
@@ -503,9 +699,37 @@ header .textContainer {
     display: flex;
   }
   .aboutUs .textContainer .desktop__extraContainer, .aboutUs .textContainer .desktop__extraContainer__2 {
-    grid-area: desktop__extraContainer;
-    align-self: center;
+    width: 35vw;
+    min-height: 15vh;
+    height: auto;
+    background: linear-gradient(to right, #BF6550 30%, #F2ECEB);
     display: grid;
+    position: absolute;
+    right: 0;
+    top: 30%;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 80% 20%;
+    grid-template-areas: "svg text" "title text";
+  }
+  .aboutUs .textContainer .desktop__extraContainer svg, .aboutUs .textContainer .desktop__extraContainer__2 svg {
+    width: 80px;
+    height: 80px;
+    grid-area: svg;
+    justify-self: center;
+    align-self: center;
+  }
+  .aboutUs .textContainer .desktop__extraContainer .title, .aboutUs .textContainer .desktop__extraContainer__2 .title {
+    grid-area: title;
+    font-weight: bolder;
+    text-align: center;
+  }
+  .aboutUs .textContainer .desktop__extraContainer .text, .aboutUs .textContainer .desktop__extraContainer__2 .text {
+    grid-area: text;
+    align-self: center;
+  }
+  .aboutUs .textContainer .desktop__extraContainer__2 {
+    width: 25vw;
+    top: 60%;
   }
   .information__1 {
     background-color: #262626;
@@ -516,6 +740,61 @@ header .textContainer {
   }
   .information__1 .textContainer .desktop__extraContainer .desktop__button-mainlyCareers, .information__1 .aboutUs .textContainer .desktop__extraContainer__2 .desktop__button-mainlyCareers, .aboutUs .information__1 .textContainer .desktop__extraContainer__2 .desktop__button-mainlyCareers {
     display: flex;
+  }
+  .frequentQuestions .emptyDiv-1 {
+    width: 100%;
+    height: 5px;
+    background-color: #262626;
+    border-radius: 20px 20px 0 0;
+  }
+  .frequentQuestions .questionContainer {
+    width: 100%;
+    height: 80px;
+    padding: 0 5% 0 5%;
+    background-color: #262626;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #F2ECEB;
+    cursor: pointer;
+  }
+  .frequentQuestions .answerContainer {
+    width: 100%;
+    background-color: #BF6550;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: #F2ECEB;
+    text-align: center;
+  }
+  .frequentQuestions .showAnswerContainer {
+    display: flex;
+    -webkit-animation-name: showAnswerContainer;
+            animation-name: showAnswerContainer;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+  }
+  @-webkit-keyframes showAnswerContainer {
+    from {
+      min-height: 0;
+      height: 0;
+    }
+    to {
+      min-height: 15vh;
+      height: auto;
+    }
+  }
+  @keyframes showAnswerContainer {
+    from {
+      min-height: 0;
+      height: 0;
+    }
+    to {
+      min-height: 15vh;
+      height: auto;
+    }
   }
 }
 .plataform__enter .contentContainer {

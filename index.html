@@ -16,15 +16,19 @@
             <p class="size-l">L.A. University</p>
         </a>
 
-        <div class="linksContainer">
-            <a href="#aboutUs" class="size-l">About Us</a>
-            <a href="#information__1" class="size-l">Careers</a>
-            <a href="#information__2" class="size-l">Something</a>
-            <a href="#frequentQuestions" class="size-l">Frequent Questions</a>
-            <a href="/pages/plataform__enter.html" class="size-l plataform">Plataform</a>
+        <!-- style for mobile -->
+        <div class="navMobileStyle" id="navMobileStyle"></div>
+        <!-- - -->
+
+        <div class="linksContainer" id="linksContainer">
+            <a href="#aboutUs" class="size-l navLink">About Us</a>
+            <a href="#information__1" class="size-l navLink ">Careers</a>
+            <a href="#information__2" class="size-l navLink ">Something</a>
+            <a href="#frequentQuestions" class="size-l navLink ">Frequent Questions</a>
+            <a href="/pages/plataform__enter.html" class="size-l  navLink plataform">Plataform</a>
         </div>
 
-        <div class="hamburguerContainer">
+        <div class="hamburguerContainer" id="hamburguerMenu">
             <div class="stick stick__1"></div>
             <div class="stick stick__2"></div>
             <div class="stick stick__3"></div>
@@ -134,42 +138,49 @@
     </section>
 
     <!-- carouselInfinite -->
-    <div class="carouselInfinite">
-        <div class="slidetrack">
-            <a href="" class="slide">
-                <img src="/images/carouselInfinite1.jpg" alt="">
-                <div class="textContainer">
-                    <p class="size-xl">Descriptive text</p>
-                </div>
-            </a>
-            
-            <a href="" class="slide">
-                <img src="/images/carouselInfinite2.jpg" alt="">
-                <div class="textContainer">
-                    <p class="size-xl">Descriptive text</p>
-                </div>
-            </a>
-            
-            <a href="" class="slide">
-                <img src="/images/carouselInfinite3.jpg" alt="">
-                <div class="textContainer">
-                    <p class="size-xl">Descriptive text</p>
-                </div>
-            </a>
-            
-            <a href="" class="slide">
-                <img src="/images/carouselInfinite4.jpg" alt="">
-                <div class="textContainer">
-                    <p class="size-xl">Descriptive text</p>
-                </div>
-            </a>
-            
-            <a href="" class="slide">
-                <img src="/images/carouselInfinite5.jpg" alt="">
-                <div class="textContainer">
-                    <p class="size-xl">Descriptive text</p>
-                </div>
-            </a>
+    <div class="carouselInfinite" id="carouselInfinite">
+        <div class="slidetracksContainer" id="carouselInfinite__slidetracksContainer">
+            <div class="slidetrack" id="carouselInfinite__slidetrack">
+                <a href="" class="slide carouselInfinite__slide">
+                    <img src="/images/carouselInfinite1.jpg" alt="" class="mobileIMG">
+                    <img src="/images/carouselInfinite1__desktop.jpg" alt="" class="desktopIMG">
+                    <div class="textContainer">
+                        <p class="size-xl">Descriptive text</p>
+                    </div>
+                </a>
+                
+                <a href="" class="slide carouselInfinite__slide">
+                    <img src="/images/carouselInfinite2.jpg" alt="" class="mobileIMG">
+                    <img src="/images/carouselInfinite2__desktop.jpg" alt="" class="desktopIMG">
+                    <div class="textContainer">
+                        <p class="size-xl">Descriptive text</p>
+                    </div>
+                </a>
+                
+                <a href="" class="slide carouselInfinite__slide">
+                    <img src="/images/carouselInfinite3.jpg" alt="" class="mobileIMG">
+                    <img src="/images/carouselInfinite3__desktop.jpg" alt="" class="desktopIMG">
+                    <div class="textContainer">
+                        <p class="size-xl">Descriptive text</p>
+                    </div>
+                </a>
+                
+                <a href="" class="slide carouselInfinite__slide">
+                    <img src="/images/carouselInfinite4.jpg" alt="" class="mobileIMG">
+                    <img src="/images/carouselInfinite4__desktop.jpg" alt="" class="desktopIMG">
+                    <div class="textContainer">
+                        <p class="size-xl">Descriptive text</p>
+                    </div>
+                </a>
+                
+                <a href="" class="slide carouselInfinite__slide">
+                    <img src="/images/carouselInfinite5.jpg" alt="" class="mobileIMG">
+                    <img src="/images/carouselInfinite5__desktop.jpg" alt="" class="desktopIMG">
+                    <div class="textContainer">
+                        <p class="size-xl">Descriptive text</p>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -232,7 +243,7 @@
             </div>
         </div>
         <div class="answerContainer" id="answerContainer_1">
-            <p class="size-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit deleniti a nihil quos delectus molestiae inventore, voluptates nesciunt laboriosam. Magni?</p>
+            <p class="size-xl" id="answer__1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit deleniti a nihil quos delectus molestiae inventore, voluptates nesciunt laboriosam. Magni?</p>
         </div>
 
         <!-- * question 2 * -->
@@ -245,7 +256,7 @@
             </div>
         </div>
         <div class="answerContainer" id="answerContainer_2">
-            <p class="size-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit deleniti a nihil quos delectus molestiae inventore, voluptates nesciunt laboriosam. Magni?</p>
+            <p class="size-xl" id="answer__2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit deleniti a nihil quos delectus molestiae inventore, voluptates nesciunt laboriosam. Magni?</p>
         </div>
 
         <!-- * question 3 * -->
@@ -258,7 +269,7 @@
             </div>
         </div>
         <div class="answerContainer" id="answerContainer_3">
-            <p class="size-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit deleniti a nihil quos delectus molestiae inventore, voluptates nesciunt laboriosam. Magni?</p>
+            <p class="size-xl" id="answer__3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit deleniti a nihil quos delectus molestiae inventore, voluptates nesciunt laboriosam. Magni?</p>
         </div>
 
         <!-- * question 4 * -->
@@ -271,7 +282,7 @@
             </div>
         </div>
         <div class="answerContainer" id="answerContainer_4">
-            <p class="size-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit deleniti a nihil quos delectus molestiae inventore, voluptates nesciunt laboriosam. Magni?</p>
+            <p class="size-xl" id="answer__4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit deleniti a nihil quos delectus molestiae inventore, voluptates nesciunt laboriosam. Magni?</p>
         </div>
 
         <!-- * question 5 * -->
@@ -284,7 +295,7 @@
             </div>
         </div>
         <div class="answerContainer" id="answerContainer_5">
-            <p class="size-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit deleniti a nihil quos delectus molestiae inventore, voluptates nesciunt laboriosam. Magni?</p>
+            <p class="size-xl" id="answer__5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit deleniti a nihil quos delectus molestiae inventore, voluptates nesciunt laboriosam. Magni?</p>
         </div>
 
         <!-- * it works as page style * -->
@@ -326,5 +337,9 @@
         </div>
         
     </footer>
+
+    <script src="/javascript/nav.js"></script>
+    <script src="./javascript/index.js"></script>
+    <script src="/javascript/carouselInfinite.js"></script>
 </body>
 </html>

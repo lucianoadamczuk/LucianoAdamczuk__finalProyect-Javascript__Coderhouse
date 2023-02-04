@@ -64,6 +64,7 @@ header{
                             height: 80px;
                             grid-area: svg;
                             justify-self: center;
+                            align-self: center;
                         }
 
                         .title{
@@ -185,9 +186,6 @@ header{
 
     .answerContainer{
         width: 100%;
-        min-height: 50px;
-        height: auto;
-        padding: 0 10% 0 10%;
         background-color: $color-quintary;
         display: none;
         justify-content: center;
@@ -195,6 +193,48 @@ header{
         color: $color-primary;
         text-align: center;
     }
+
+    // These ones show the answers container and the answers, and also add styles on them
+    .showAnswerContainer{
+        display: flex;
+        
+        animation-name: showAnswerContainer;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        @keyframes showAnswerContainer{
+            from{
+                min-height: 0;
+                height: 0;
+            }
+            to{
+                min-height: 30vh;
+                height: auto;
+            }
+        }
+    }
+
+    .showAnswer{
+        animation-name: showAnswer;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        @keyframes showAnswer {
+            0%{
+                display: none;
+                opacity: 0;
+                margin: 0;
+            }
+            50%{
+                display: flex;
+                opacity: 0;
+                margin: 5px 10px 5px 10px;
+            }
+            100%{
+                display: flex;
+                opacity: 100%;
+            }
+        }
+    }
+    // -
 
     .emptyDiv-2{
         width: 100%;
@@ -209,7 +249,7 @@ header{
         .textContainer{
             display: grid;
             grid-template-columns: 40% 60%;
-            grid-template-rows: 10% 90%;
+            grid-template-rows: 20% 80%;
             grid-template-areas: 
             "title desktop__extraContainer"
             "text  desktop__extraContainer";
@@ -225,14 +265,48 @@ header{
             .desktop__textSpan{
                 display: flex;
             }
-            
+
             .desktop__extraContainer{
-                grid-area: desktop__extraContainer;
-                align-self:center;
+                width: 35vw;
+                min-height: 15vh;
+                height: auto;
+                background: linear-gradient(to right, $color-quintary 30%,  $color-primary);
                 display: grid;
+                position: absolute;
+                right: 0;
+                top: 30%;
+                grid-template-columns: 30% 70%;
+                grid-template-rows: 80% 20%;
+                grid-template-areas:
+                "svg text"
+                "title text";
+
+                    svg{
+                        width: 80px;
+                        height: 80px;
+                        grid-area: svg;
+                        justify-self: center;
+                        align-self: center;
+                    }
+
+                    .title{
+                        grid-area: title;
+                        font-weight: bolder;
+                        text-align: center;
+                    }
+
+                    .text{
+                        grid-area: text;
+                        align-self: center;
+                    }
+            }
+
+            .desktop__extraContainer__2{
+                @extend .desktop__extraContainer;
+                width: 25vw;
+                top: 60%;
             }
         }
-
     }
 
     .information__1{
@@ -249,5 +323,56 @@ header{
                 }
             }
     
+    }
+
+    .frequentQuestions{
+
+        .emptyDiv-1{
+            width: 100%;
+            height: 5px;
+            background-color: $color-secondary;
+            border-radius: 20px 20px 0 0;
+        }
+    
+        .questionContainer{
+            width: 100%;
+            height: 80px;
+            padding: 0 5% 0 5%;
+            background-color: $color-secondary;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: $color-primary;
+            cursor: pointer;
+        }
+    
+        .answerContainer{
+            width: 100%;
+            background-color: $color-quintary;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            color: $color-primary;
+            text-align: center;
+        }
+    
+        // These ones show the answers container and the answers, and also add styles on them
+        .showAnswerContainer{
+            display: flex;
+            
+            animation-name: showAnswerContainer;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            @keyframes showAnswerContainer{
+                from{
+                    min-height: 0;
+                    height: 0;
+                }
+                to{
+                    min-height: 15vh;
+                    height: auto;
+                }
+            }
+        }
     }
 }
