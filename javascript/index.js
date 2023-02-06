@@ -1,3 +1,44 @@
+// * information__1 *
+const index__desktop__button_mainlyCareers = document.getElementById(`index__desktop__button_mainlyCareers`)
+const index__information1_itemsContainer = document.getElementById(`index__information1_itemsContainer`)
+const index__information1_item = document.querySelectorAll(`.index__information1_item`)
+
+// flag
+let  information__1_button_open = false
+
+index__desktop__button_mainlyCareers.addEventListener(`click`, e =>{
+    if(information__1_button_open == false){
+        index__information1_itemsContainer.style.marginLeft = `0`
+        index__information1_itemsContainer.style.transition = `0.5s linear`
+    
+        setTimeout(() => {
+            index__information1_item.forEach(item => {
+                item.style.margin = `0px 2% 0px 2%`
+                item.style.transition = `0.5s`
+            });
+        }, 500);
+
+        // flag
+        information__1_button_open = true
+    }
+    else{
+        index__information1_item.forEach(item => {
+            item.style.margin = `0px 0% 0px 0%`
+            item.style.transition = `0.5s`
+        });
+
+        setTimeout(() => {
+            index__information1_itemsContainer.style.marginLeft = `150%`
+            index__information1_itemsContainer.style.transition = `0.5s linear`
+        }, 500);
+
+        // flag
+        information__1_button_open = false
+    }
+})
+
+
+// * requentQuestions *
 const questionContainer_1 = document.getElementById(`questionContainer_1`)
 const answerContainer_1 = document.getElementById(`answerContainer_1`)
 const answer__1 = document.getElementById(`answer__1`)
@@ -38,3 +79,7 @@ questionContainer_5.addEventListener(`click`, e => {
     answerContainer_5.classList.toggle(`showAnswerContainer`)
     answer__5.classList.toggle(`showAnswer`)
 })
+
+// -
+
+

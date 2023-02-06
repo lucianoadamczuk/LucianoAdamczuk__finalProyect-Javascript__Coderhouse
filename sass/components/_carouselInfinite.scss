@@ -3,7 +3,7 @@
     height: 30vh;
     padding: 1% 0 1% 0;
     display: flex;
-    overflow: scroll;
+    overflow: hidden;
 
         .slidetracksContainer{
             width: auto;
@@ -49,20 +49,24 @@
     }
 }
 
-// TODO - fix the problems with the images in the slides 
+
 @media screen and (min-width: 900px){
     .carouselInfinite{
         height: 50vh;
-        .slidetrack{
-            .slide{
-                .mobileIMG{
-                    display: none;
-                }
 
-                .desktopIMG{
-                    display: flex;
+            .slidetracksContainer{
+                .slidetrack{
+                    .slide{
+                        
+                        .mobileIMG{
+                            display: none;
+                        }
+        
+                        .desktopIMG{
+                            display: flex;
+                        }
+                    }
                 }
             }
-        }
     }
 }

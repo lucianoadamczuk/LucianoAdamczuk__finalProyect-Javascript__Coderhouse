@@ -92,69 +92,99 @@ header{
     position: relative;
         .textContainer{
             color: $color-primary;
+            position: relative;
+        }
 
-            .desktop__extraContainer{
-                width: 100%;
-                height: 30vh;
-                margin-top: 60px;
-                position: absolute;
-                left: 0;
-                display: none;
-                flex-wrap: wrap;
-                justify-content: center;
-                align-content: center;
+        .background{
+            width: 100%;
+            height: 30vh;
+            position: absolute;
+            bottom: 26%;
+            right: 0;
+            @include flexStructureColumn;
+            opacity: 5%;
 
-                    .itemsContainer{
-                        width: 100%;
-                        height: 100%;
-                        margin-left: 150%;
-                        display: none;
-                        align-items: center;
-                        overflow: hidden;
+                svg{
+                    width: 80%;
+                    height: 80%;
+                    fill: $color-primary;
+                }
 
-                            .item{
-                                width: 120px;
-                                height: 120px;
-                                border-radius: 50%;
-                                background-color: $color-quaternary-variant;
-                                @include flexStructureRow;
-                                cursor: pointer;
-        
-                                    svg{
-                                        width: 50%;
-                                        height: 50%;
-                                    }
-                            }
-        
-                            .item:hover{
-                                transform: scale(105%);
-                                
-                            }
-                    }
-                    
+                p{
+                    font-size: 3rem;
+                    color: $color-primary;
+                }
+        }
 
-                    .desktop__button-mainlyCareers{
-                        width: 60px;
-                        height: 100%;
-                        background-color: $color-quaternary;
-                        position: absolute;
-                        right: 0;
-                        @include flexStructureRow;
-                        border-radius: 10px 0 0 10px;
-                        cursor: pointer;
+        .desktop__extraContainer{
+            width: 100%;
+            height: 30dvh;
+            position: absolute;
+            right: 0;
+            top: 40%;
+            display: none;
 
-                            p{
-                                font-weight: bold;
-                                writing-mode: vertical-lr;
-                                text-align: center;
-                            }
-                    }
 
-                    .desktop__button-mainlyCareers:hover{
-                        width: 70px;
-                        transition: 0.5s;
-                    }
-            }
+                .itemsContainer{
+                    width: 100%;
+                    height: 100%;
+                    margin-left: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+
+                        .item{
+                            min-width: 120px;
+                            height: 120px;
+                            background-color: $color-quaternary-variant;
+                            @include flexStructureRow;
+                            border-radius: 50%;
+                            cursor: pointer;
+    
+                                svg{
+                                    width: 50%;
+                                    height: 50%;
+                                    fill: $color-primary;
+                                }
+                        }
+    
+                        .item:hover{
+                            transform: scale(110%);
+                            background-color: $color-primary;
+                            
+                                svg{
+                                    fill: $color-quaternary;
+                                }
+                        }
+                }
+                
+                .desktop__button-mainlyCareers{
+                    width: 60px;
+                    height: 100%;
+                    background-color: $color-quaternary;
+                    position: absolute;
+                    right: 0;
+                    @include flexStructureRow;
+                    border-radius: 10px 0 0 10px;
+                    cursor: pointer;
+
+                        p{
+                            font-weight: bold;
+                            writing-mode: vertical-lr;
+                            text-align: center;
+                            color: $color-primary;
+                        }
+                }
+
+                .desktop__button-mainlyCareers:hover{
+                    width: 70px;
+                    transition: 0.5s;
+                }
+        }
+
+        .buttonContainer{
+            margin-top: 100px;
         }
 }
 
@@ -168,6 +198,7 @@ header{
     .emptyDiv-1{
         width: 100%;
         height: 5px;
+        margin-top: 20px;
         background-color: $color-secondary;
         border-radius: 20px 20px 0 0;
     }
@@ -249,7 +280,7 @@ header{
         .textContainer{
             display: grid;
             grid-template-columns: 40% 60%;
-            grid-template-rows: 20% 80%;
+            grid-template-rows: 10% 90%;
             grid-template-areas: 
             "title desktop__extraContainer"
             "text  desktop__extraContainer";
@@ -313,15 +344,12 @@ header{
         background-color: $color-secondary;
         position: relative;
 
-            .textContainer{
-
-                .desktop__extraContainer{
+        .desktop__extraContainer{
+            display: flex;
+                .desktop__button-mainlyCareers{
                     display: flex;
-                        .desktop__button-mainlyCareers{
-                            display: flex;
-                        }
                 }
-            }
+        }
     
     }
 
