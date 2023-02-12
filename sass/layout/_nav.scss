@@ -1,7 +1,7 @@
 nav{
     width: 100%;
     height: 50px;
-    background-color: $color-tertiary;
+    background-color: $color-secondary;
     position: fixed;
     display: flex;
     justify-content: space-between;
@@ -50,10 +50,16 @@ nav{
                     transition: 0.5s;
                 }
 
-                .plataform{
+                .plataformLink{
                     padding: 5px;
                     background-color: $color-quaternary;
                     border-radius: 10px;
+                }
+
+                .plataform:hover{
+                    transform: none;
+                    background-color: $color-primary;
+                    color: $color-quaternary;
                 }
 
                 // it shows the links in nav.js

@@ -194,7 +194,7 @@ header{
 }
 
 .frequentQuestions{
-
+    background-color: $color-primary;
     .emptyDiv-1{
         width: 100%;
         height: 5px;
@@ -213,6 +213,23 @@ header{
         align-items: center;
         color: $color-primary;
         cursor: pointer;
+
+        // it runs in JS
+        .rotateArrow{
+            animation-name: rotateArrow;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+
+            @keyframes rotateArrow {
+                from{
+                    transform: rotate(0deg);
+                }
+                to{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        // -
     }
 
     .answerContainer{
@@ -225,7 +242,7 @@ header{
         text-align: center;
     }
 
-    // These ones show the answers container and the answers, and also add styles on them
+    // These run in JS and show the answers container and the answers, and also add styles on them
     .showAnswerContainer{
         display: flex;
         

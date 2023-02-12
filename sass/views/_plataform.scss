@@ -1,0 +1,265 @@
+.plataform{
+    height: 100vh;
+    position: relative;
+    background-color: $color-primary;
+
+        .titleContainer{
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+                .logoContainer{
+                    width: 10%;
+                    height: 70px;
+                    background-color: $color-primary;
+                    display: none;
+                    border-radius: 10%;
+                    color: $color-secondary;
+                        svg{
+                            fill: $color-secondary;
+                        }
+                }
+        }
+
+        .optionsContainer{
+            width: 80%;
+            min-height: 5vh;
+            height: auto;
+            background-color: $color-tertiary;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 0 0 10px 10px;
+            z-index: 1;
+
+                p{
+                    color: $color-primary;
+                    display: none;
+                    text-align: center;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+
+                p:hover{
+                    transform: scale(105%);
+                    transition: 0.5s;
+                    color: $color-quaternary;
+                }
+
+                .circle{
+                    width: 40px;
+                    height: 40px;
+                    background-color: $color-quaternary;
+                    position: absolute;
+                    bottom: -20px;
+                    @include flexStructureRow;
+                    border-radius: 50%;
+
+                        svg{
+                            width: 25px;
+                            height: 25px;
+                            fill: $color-primary;
+                        }
+                }
+        }
+
+        // they run in js
+        .showMenu{
+            animation-name: showMenu;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            @keyframes showMenu{
+                from{
+                    height: 5vh;
+                }
+                to{
+                    height: 80vh;
+                }
+            }
+        }
+
+        .hideMenu{
+            animation-name: hideMenu;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            @keyframes hideMenu{
+                from{
+                    height: 80vh;
+                }
+                to{
+                    height: 5vh;
+                }
+            }
+        }
+        // -
+
+        .contentContainer{
+            width: 100%;
+            min-height: 80vh;
+            height: auto;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+                // myCareer
+                .myCareer{
+                    width: 100%;
+                    min-height: auto;
+                    display: none;
+                    flex-direction: column;
+                    opacity: 0;
+
+                        .textContainer{
+                            min-height: 10vh;
+                            background-color: $color-secondary;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: $color-primary;
+                        }
+                        .informationContainer{
+                            width: 100%;
+                            min-height: 55vh;
+                            
+                                .careerContainer{
+                                    width: 100%;
+                                    height: 10vh;
+                                    background-color: $color-quintary;
+                                }
+                                .subjectsContainer{
+                                    width: 100%;
+                                    height: 45vh;
+                                    padding: 2%;
+                                    
+                                    overflow-y: scroll;
+                                }
+                        }
+                }
+
+                // changeInformation
+                .changeInformation{
+                    width: 100%;
+                    min-height: 65vh;
+                    height: auto;
+                    display: none;
+                    flex-direction: column;
+                    justify-content: center;
+                    opacity: 0;
+                }
+
+                // They run in JS
+                .showContainer{
+                    animation-name: showContainer;
+                    animation-duration: 1s;
+                    animation-fill-mode: forwards;
+                    @keyframes showContainer{
+                        0%{
+                            opacity: 0%;
+                        }
+                        100%{
+                            opacity: 100%;
+                        }
+                    }
+                }
+
+                .hideContainer{
+                    animation-name: hideContainer;
+                    animation-duration: 0.5s;
+                    animation-fill-mode: forwards;
+                    @keyframes hideContainer{
+                        0%{
+                            opacity: 100%;
+                        }
+                        100%{
+                            opacity: 0%;
+                        }
+                    }
+                }
+                // -
+        }
+
+        .logoContainer{
+            width: 100%;
+            height: 50px;
+            @include flexStructureColumn;
+            background-color: $color-tertiary;
+            color: $color-primary;
+            border-radius: 0 0 10px 10px;
+                svg{
+                    width: 30px;
+                    height: 30px;
+                    fill: $color-primary;
+                }
+        }
+}
+
+@media screen and (min-width: 1000px){
+    .plataform{
+        display: flex;
+        flex-wrap: wrap;
+        
+        .titleContainer{
+            .logoContainer{
+                display: flex;
+            }
+        }
+        .optionsContainer{
+            width: 10%;
+            height: 70vh;
+            margin-top: 5vh;
+            position: relative;
+            border-radius: 0 10px 10px 0;
+    
+                p{
+                    margin-bottom: 20px;
+                    display: flex;
+                    opacity: 100;
+                }
+    
+                .circle{
+                    display: none;
+                }
+        }
+
+        .contentContainer{
+            width: 90%;
+            height: 60vh;
+            padding-left: 100px;
+
+                // myCareer
+                .myCareer{
+
+                    .informationContainer{
+                        display: flex;
+
+                            .careerContainer{
+                                width: 30%;
+                                height: 55vh;
+                                
+                            }
+                            .subjectsContainer{
+                                width: 70%;
+                                height: 55vh;
+                            }
+                    }
+                }
+
+                // changeInformation
+                .changeInformation{
+                    width: 100%;
+                    min-height: 70vh;
+                    margin-top: 0px;
+                    justify-content: center;
+                }
+
+        }
+
+        .logoContainer{
+            display: none;
+        }
+    }
+}

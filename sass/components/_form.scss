@@ -1,8 +1,7 @@
 form{
     width: 300px;
-    min-height: 300px;
+    min-height: 250px;
     height: auto;
-    
     padding: 20px 30px 20px 30px;
     background-color: $color-secondary;
     display: flex;
@@ -18,8 +17,91 @@ form{
             width: 100%;
         }
 
-        input{
+        input, select{
             margin-bottom: 15px;
             padding-left: 5px;
         }
+        input:disabled{
+            background-color: $color-quintary;
+            color: $color-primary;
+        }
+        .buttonContainer{
+            width: 100%;
+            min-height: auto;
+            position: relative;
+
+                .button{
+                    width: 100%;
+                    margin-top: 10px;
+                }
+
+                .realButton{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    bottom:0 ;
+                    opacity: 0;
+                }
+        }
+}
+
+
+.formType2{
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+        .inputContainer{
+            width: 100%;
+            height: auto;
+            @include flexStructureColumn;
+            text-align: center;
+        }
+
+        .inputContainer__sex{
+            p{
+                padding: 0 100px 0 100px;
+                width: 100%;
+                height: 25px;
+                background-color: $color-quintary;
+                color: $color-primary;
+            }
+        }
+        .careerContainer{
+            width: 100%;
+            @include flexStructureColumn;
+            text-align: center;
+            margin-bottom: 20px;
+
+                p{
+                    padding: 0 100px 0 100px;
+                    width: 100%;
+                    height: 25px;
+                    background-color: $color-quintary;
+                    color: $color-primary;
+                }
+        }
+
+        .buttonContainer{
+            max-width: 200px;
+            height: auto;
+
+                .realButton{
+                    cursor: pointer;
+                }
+        }
+}
+
+@media screen and (min-width: 1000px){
+    .formType2{
+        .inputContainer{
+            width: 50%;
+
+                input{
+                    width: 60%;
+                }
+        }
+    }
 }

@@ -39,7 +39,7 @@ h1, h2, h3 {
 nav {
   width: 100%;
   height: 50px;
-  background-color: #593528;
+  background-color: #262626;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -61,20 +61,9 @@ nav .navMobileStyle {
   position: absolute;
   top: 50px;
   display: none;
-  -webkit-animation-name: styleOpenMenu;
-          animation-name: styleOpenMenu;
-  -webkit-animation-duration: 0.3;
-          animation-duration: 0.3;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-@-webkit-keyframes styleOpenMenu {
-  from {
-    height: 0;
-  }
-  to {
-    height: 40px;
-  }
+  animation-name: styleOpenMenu;
+  animation-duration: 0.3;
+  animation-fill-mode: forwards;
 }
 @keyframes styleOpenMenu {
   from {
@@ -97,37 +86,23 @@ nav .linksContainer .navLink:hover {
   transform: scale(110%);
   transition: 0.5s;
 }
-nav .linksContainer .plataform {
+nav .linksContainer .plataformLink {
   padding: 5px;
   background-color: #3F6ABF;
   border-radius: 10px;
 }
+nav .linksContainer .plataform:hover {
+  transform: none;
+  background-color: #F2ECEB;
+  color: #3F6ABF;
+}
 nav .linksContainer .showNavLinks {
   display: flex;
   opacity: 0%;
-  -webkit-animation-name: showLinks;
-          animation-name: showLinks;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-}
-@-webkit-keyframes showLinks {
-  0% {
-    opacity: 0%;
-  }
-  50% {
-    opacity: 80%;
-  }
-  70% {
-    opacity: 100%;
-  }
-  100% {
-    opacity: 100%;
-    margin: 10px 0 10px 0;
-  }
+  animation-name: showLinks;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 @keyframes showLinks {
   0% {
@@ -155,22 +130,10 @@ nav .showMenu {
   align-items: center;
   background-color: #593528;
   border-radius: 20%;
-  -webkit-animation-name: showMenu;
-          animation-name: showMenu;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-}
-@-webkit-keyframes showMenu {
-  from {
-    height: 0;
-  }
-  to {
-    height: 30vh;
-  }
+  animation-name: showMenu;
+  animation-fill-mode: forwards;
+  animation-duration: 0.2s;
+  animation-timing-function: linear;
 }
 @keyframes showMenu {
   from {
@@ -276,6 +239,11 @@ footer .legalsContainer .linksContainer a {
   color: #F2ECEB;
 }
 
+@media screen and (min-width: 1000px) {
+  footer .socialMedias .bi {
+    margin-right: 50px;
+  }
+}
 .button {
   min-width: 100px;
   min-height: 50px;
@@ -354,66 +322,56 @@ footer .legalsContainer .linksContainer a {
     display: flex;
   }
 }
-.carouselOurFacilities {
+.carouselContinuous {
   width: 100%;
   height: 20vh;
   margin-top: 20%;
   position: relative;
 }
-.carouselOurFacilities .slidetrack {
+.carouselContinuous .slidetrack {
   width: 100%;
   height: 100%;
+  position: relative;
   display: flex;
   overflow: hidden;
 }
-.carouselOurFacilities .slidetrack img {
+.carouselContinuous .slidetrack img {
   min-width: 80%;
   height: 100%;
   margin: 0 5px 0 5px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.carouselOurFacilities .slidetrack .sidesContainer {
-  width: 90%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 5%;
-  display: flex;
-  justify-content: space-between;
-}
-.carouselOurFacilities .slidetrack .sidesContainer .side {
-  width: 20%;
-  height: 100%;
-}
-.carouselOurFacilities .slidetrack .sidesContainer .side-1 {
-  background: linear-gradient(to right, #593528, rgba(255, 255, 255, 0));
-}
-.carouselOurFacilities .slidetrack .sidesContainer .side-2 {
-  background: linear-gradient(to left, #593528, rgba(255, 255, 255, 0));
-}
-.carouselOurFacilities .buttonsContainer {
+.carouselContinuous .slidetrack .sidesContainer {
   width: 100%;
   height: 100%;
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0%;
   display: flex;
   justify-content: space-between;
 }
-.carouselOurFacilities .buttonsContainer .btn {
-  width: 5%;
+.carouselContinuous .slidetrack .sidesContainer .side {
+  width: 20%;
   height: 100%;
-  background-color: #593528;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+}
+.carouselContinuous .slidetrack .sidesContainer .side svg {
+  width: 30px;
+  height: 30px;
+}
+.carouselContinuous .slidetrack .sidesContainer .side-1 {
+  background: linear-gradient(to right, #262626, rgba(255, 255, 255, 0));
+}
+.carouselContinuous .slidetrack .sidesContainer .side-2 {
+  background: linear-gradient(to left, #262626, rgba(255, 255, 255, 0));
 }
 
 form {
   width: 300px;
-  min-height: 300px;
+  min-height: 250px;
   height: auto;
   padding: 20px 30px 20px 30px;
   background-color: #262626;
@@ -428,11 +386,86 @@ form h3 {
 form label {
   width: 100%;
 }
-form input {
+form input, form select {
   margin-bottom: 15px;
   padding-left: 5px;
 }
+form input:disabled {
+  background-color: #BF6550;
+  color: #F2ECEB;
+}
+form .buttonContainer {
+  width: 100%;
+  min-height: auto;
+  position: relative;
+}
+form .buttonContainer .button {
+  width: 100%;
+  margin-top: 10px;
+}
+form .buttonContainer .realButton {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+}
 
+.formType2 {
+  width: 100%;
+  height: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.formType2 .inputContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.formType2 .inputContainer__sex p {
+  padding: 0 100px 0 100px;
+  width: 100%;
+  height: 25px;
+  background-color: #BF6550;
+  color: #F2ECEB;
+}
+.formType2 .careerContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.formType2 .careerContainer p {
+  padding: 0 100px 0 100px;
+  width: 100%;
+  height: 25px;
+  background-color: #BF6550;
+  color: #F2ECEB;
+}
+.formType2 .buttonContainer {
+  max-width: 200px;
+  height: auto;
+}
+.formType2 .buttonContainer .realButton {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1000px) {
+  .formType2 .inputContainer {
+    width: 50%;
+  }
+  .formType2 .inputContainer input {
+    width: 60%;
+  }
+}
 header {
   width: 100%;
   height: 95vh;
@@ -591,8 +624,7 @@ header .textContainer {
 }
 .information__1 .desktop__extraContainer .desktop__button-mainlyCareers p, .information__1 .aboutUs .textContainer .desktop__extraContainer__2 .desktop__button-mainlyCareers p, .aboutUs .textContainer .information__1 .desktop__extraContainer__2 .desktop__button-mainlyCareers p {
   font-weight: bold;
-  -ms-writing-mode: tb-lr;
-      writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
   text-align: center;
   color: #F2ECEB;
 }
@@ -609,6 +641,9 @@ header .textContainer {
   color: #F2ECEB;
 }
 
+.frequentQuestions {
+  background-color: #F2ECEB;
+}
 .frequentQuestions .emptyDiv-1 {
   width: 100%;
   height: 5px;
@@ -627,6 +662,19 @@ header .textContainer {
   color: #F2ECEB;
   cursor: pointer;
 }
+.frequentQuestions .questionContainer .rotateArrow {
+  animation-name: rotateArrow;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes rotateArrow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
 .frequentQuestions .answerContainer {
   width: 100%;
   background-color: #BF6550;
@@ -638,22 +686,9 @@ header .textContainer {
 }
 .frequentQuestions .showAnswerContainer {
   display: flex;
-  -webkit-animation-name: showAnswerContainer;
-          animation-name: showAnswerContainer;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-@-webkit-keyframes showAnswerContainer {
-  from {
-    min-height: 0;
-    height: 0;
-  }
-  to {
-    min-height: 30vh;
-    height: auto;
-  }
+  animation-name: showAnswerContainer;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 @keyframes showAnswerContainer {
   from {
@@ -666,28 +701,9 @@ header .textContainer {
   }
 }
 .frequentQuestions .showAnswer {
-  -webkit-animation-name: showAnswer;
-          animation-name: showAnswer;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-@-webkit-keyframes showAnswer {
-  0% {
-    display: none;
-    opacity: 0;
-    margin: 0;
-  }
-  50% {
-    display: flex;
-    opacity: 0;
-    margin: 5px 10px 5px 10px;
-  }
-  100% {
-    display: flex;
-    opacity: 100%;
-  }
+  animation-name: showAnswer;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 @keyframes showAnswer {
   0% {
@@ -799,22 +815,9 @@ header .textContainer {
   }
   .frequentQuestions .showAnswerContainer {
     display: flex;
-    -webkit-animation-name: showAnswerContainer;
-            animation-name: showAnswerContainer;
-    -webkit-animation-duration: 1s;
-            animation-duration: 1s;
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards;
-  }
-  @-webkit-keyframes showAnswerContainer {
-    from {
-      min-height: 0;
-      height: 0;
-    }
-    to {
-      min-height: 15vh;
-      height: auto;
-    }
+    animation-name: showAnswerContainer;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
   }
   @keyframes showAnswerContainer {
     from {
@@ -827,14 +830,29 @@ header .textContainer {
     }
   }
 }
+.plataform__enter {
+  min-height: 100vh;
+}
 .plataform__enter .contentContainer {
   width: 100%;
-  min-height: 80vh;
+  min-height: 73vh;
+  height: auto;
+  position: relative;
+  display: flex;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  overflow-y: scroll;
+}
+.plataform__enter .contentContainer .buttonsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
 }
 .plataform__enter .contentContainer .buttonsContainer .circle {
   width: 150px;
@@ -848,42 +866,82 @@ header .textContainer {
   cursor: pointer;
 }
 .plataform__enter .contentContainer .buttonsContainer .circleUp {
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
 }
 .plataform__enter .contentContainer .buttonsContainer .line {
   width: 100%;
   height: 1px;
   background-color: #593528;
-  position: absolute;
-  left: 0;
-  top: 49.89%;
 }
 .plataform__enter .contentContainer .buttonsContainer .circleDown {
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
 }
 .plataform__enter .contentContainer .buttonsContainer .circle:hover {
   transform: scale(105%);
   background-color: #3F6ABF;
   transition: 0.2s;
 }
-.plataform__enter .contentContainer .formSignUpContainer, .plataform__enter .contentContainer .formLogInContainer {
+.plataform__enter .contentContainer .formSignUpContainer {
   width: 100%;
   min-height: 70vh;
-  margin: 40px 0 0 0;
+  height: auto;
   position: absolute;
   top: 0;
   left: 0;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
-}
-.plataform__enter .contentContainer .formSignUpContainer .signUpForm, .plataform__enter .contentContainer .formLogInContainer .signUpForm {
   display: none;
+  opacity: 0;
+}
+@keyframes showFormcontainer {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+.plataform__enter .contentContainer .formSignUpContainer .signUpForm {
+  display: flex;
+  margin-top: 100px;
+}
+.plataform__enter .contentContainer .formSignUpContainer .formShaker {
+  animation-name: formShaker;
+  animation-duration: 0.3s;
+  animation-iteration-count: 2;
+  animation-fill-mode: forwards;
+}
+@keyframes formShaker {
+  0% {
+    margin-right: 2px;
+  }
+  25% {
+    margin-right: -2px;
+  }
+  50% {
+    margin-right: 2px;
+  }
+  75% {
+    margin-right: -2px;
+  }
+  100% {
+    margin-right: 2px;
+  }
 }
 .plataform__enter .contentContainer .formLogInContainer {
-  margin: 0 0 40px 0;
+  width: 100%;
+  min-height: 70vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  opacity: 0;
 }
 .plataform__enter .contentContainer .formLogInContainer .logInForm {
   display: flex;
@@ -893,8 +951,265 @@ header .textContainer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 .plataform__enter .contentContainer .formLogInContainer .linksContainer a {
   margin-top: 5px;
   color: #593528;
+}
+.plataform__enter .contentContainer .showForm {
+  animation-name: showForm;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+@keyframes showForm {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+.plataform__enter .contentContainer .hideForm {
+  animation-name: hideForm;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+@keyframes hideForm {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+.plataform {
+  height: 100vh;
+  position: relative;
+  background-color: #F2ECEB;
+}
+.plataform .titleContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.plataform .titleContainer .logoContainer {
+  width: 10%;
+  height: 70px;
+  background-color: #F2ECEB;
+  display: none;
+  border-radius: 10%;
+  color: #262626;
+}
+.plataform .titleContainer .logoContainer svg {
+  fill: #262626;
+}
+.plataform .optionsContainer {
+  width: 80%;
+  min-height: 5vh;
+  height: auto;
+  background-color: #593528;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+}
+.plataform .optionsContainer p {
+  color: #F2ECEB;
+  display: none;
+  text-align: center;
+  opacity: 0;
+  cursor: pointer;
+}
+.plataform .optionsContainer p:hover {
+  transform: scale(105%);
+  transition: 0.5s;
+  color: #3F6ABF;
+}
+.plataform .optionsContainer .circle {
+  width: 40px;
+  height: 40px;
+  background-color: #3F6ABF;
+  position: absolute;
+  bottom: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.plataform .optionsContainer .circle svg {
+  width: 25px;
+  height: 25px;
+  fill: #F2ECEB;
+}
+.plataform .showMenu {
+  animation-name: showMenu;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes showMenu {
+  from {
+    height: 5vh;
+  }
+  to {
+    height: 80vh;
+  }
+}
+.plataform .hideMenu {
+  animation-name: hideMenu;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes hideMenu {
+  from {
+    height: 80vh;
+  }
+  to {
+    height: 5vh;
+  }
+}
+.plataform .contentContainer {
+  width: 100%;
+  min-height: 80vh;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plataform .contentContainer .myCareer {
+  width: 100%;
+  min-height: auto;
+  display: none;
+  flex-direction: column;
+  opacity: 0;
+}
+.plataform .contentContainer .myCareer .textContainer {
+  min-height: 10vh;
+  background-color: #262626;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F2ECEB;
+}
+.plataform .contentContainer .myCareer .informationContainer {
+  width: 100%;
+  min-height: 55vh;
+}
+.plataform .contentContainer .myCareer .informationContainer .careerContainer {
+  width: 100%;
+  height: 10vh;
+  background-color: #BF6550;
+}
+.plataform .contentContainer .myCareer .informationContainer .subjectsContainer {
+  width: 100%;
+  height: 45vh;
+  padding: 2%;
+  overflow-y: scroll;
+}
+.plataform .contentContainer .changeInformation {
+  width: 100%;
+  min-height: 65vh;
+  height: auto;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+}
+.plataform .contentContainer .showContainer {
+  animation-name: showContainer;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes showContainer {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+.plataform .contentContainer .hideContainer {
+  animation-name: hideContainer;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes hideContainer {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+.plataform .logoContainer {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #593528;
+  color: #F2ECEB;
+  border-radius: 0 0 10px 10px;
+}
+.plataform .logoContainer svg {
+  width: 30px;
+  height: 30px;
+  fill: #F2ECEB;
+}
+
+@media screen and (min-width: 1000px) {
+  .plataform {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .plataform .titleContainer .logoContainer {
+    display: flex;
+  }
+  .plataform .optionsContainer {
+    width: 10%;
+    height: 70vh;
+    margin-top: 5vh;
+    position: relative;
+    border-radius: 0 10px 10px 0;
+  }
+  .plataform .optionsContainer p {
+    margin-bottom: 20px;
+    display: flex;
+    opacity: 100;
+  }
+  .plataform .optionsContainer .circle {
+    display: none;
+  }
+  .plataform .contentContainer {
+    width: 90%;
+    height: 60vh;
+    padding-left: 100px;
+  }
+  .plataform .contentContainer .myCareer .informationContainer {
+    display: flex;
+  }
+  .plataform .contentContainer .myCareer .informationContainer .careerContainer {
+    width: 30%;
+    height: 55vh;
+  }
+  .plataform .contentContainer .myCareer .informationContainer .subjectsContainer {
+    width: 70%;
+    height: 55vh;
+  }
+  .plataform .contentContainer .changeInformation {
+    width: 100%;
+    min-height: 70vh;
+    margin-top: 0px;
+    justify-content: center;
+  }
+  .plataform .logoContainer {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

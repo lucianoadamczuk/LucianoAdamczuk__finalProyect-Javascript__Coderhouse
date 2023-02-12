@@ -45,3 +45,14 @@ footer{
                 }
         }
 }
+
+@media screen and (min-width: 1000px){
+    footer{
+        .socialMedias{
+
+            .bi{
+                margin-right: 50px;
+            }
+        }
+    }
+}

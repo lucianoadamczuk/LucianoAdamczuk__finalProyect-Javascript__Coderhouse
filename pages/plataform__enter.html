@@ -12,53 +12,70 @@
         <h2 class="size-xl">L.A. University</h2>
         <h1 class="size-xxxl">Plataforma</h1>
 
-        <div class="contentContainer">
+        <div class="contentContainer" id="plataform__enter_contentContainer">
 
-            <div class="buttonsContainer">
-                <div class="circle circleUp">
+            <div class="buttonsContainer" id="plataform__enter_buttonsContainer">
+                <div class="circle circleUp" id="plataform__enter_circleUp">
                     <h3 class="size-xl">Log In</h3>
                 </div>
-                <div class="line"></div>
-                <div class="circle circleDown">
+                <div class="line" id="plataform__enter_line"></div>
+                <div class="circle circleDown" id="plataform__enter_circleDown">
                     <h3 class="size-xl">Sign Up</h3>
                 </div>
             </div>
 
                 <!-- signUpForm -->
-            <div class="formSignUpContainer">
+            <div class="formSignUpContainer" id="formSignUpContainer">
 
-                <form action="" class="signUpForm">
+                <form action="" class="signUpForm" id="signUpForm">
                     <h3 class="size-xxl">Sign Up</h3>
-
-                    <label for="user__scholarCode" class="size-xl">Scholar Code</label>
-                    <input type="text" name="user__scholarCode">
                     <label for="user__name" class="size-xl">Name</label>
-                    <input type="text" name="user__name" required>
+                    <input type="text" name="user__name" required id="input__signUpName">
 
-                    <label for="user__surname" class="size-xl">Surname</label>
-                    <input type="text" name="user__surname" required>
+                    <label for="user__Surname" class="size-xl">Surname</label>
+                    <input type="text" name="user__name" required id="input__signUpSurname">
 
-                    <label for="user__email" class="size-xl">Email</label>
-                    <input type="email" name="user__email" required>
+                    <label for="user__email" class="size-xl" id="labelSignUpEmail">Email</label>
+                    <input type="email" name="user__email" required id="input__signUpEmail">
 
                     <label for="user__password" class="size-xl">Password</label>
-                    <input type="password" name="user__password" required>
+                    <input type="password" name="user__password" required id="input__signUpPassword">
+
+                    <label for="user__date" class="size-xl">Date</label>
+                    <input type="date" name="user__date" required id="input__signUpDate">
+
+                    <label for="user__sex" class="size-xl">sex</label>
+                    <select name="user__sex" id="select__signUpSex">
+                        <option value="male">Male</option>
+                        <option value="male">Female</option>
+                    </select>
+
+                    <label for="user__career" class="size-xl">Career</label>
+                    <select name="user__career" id="select__signUpCareer">
+                        
+                    </select>
                 
-                    <div class="button">Sign Up</div>
+                    <div class="buttonContainer">
+                        <button type="submit" class="realButton" id="signUp__button"></button>
+                        <div class="button">Sign Up</div>
+                    </div>
                 </form>
             </div>
 
                 <!-- logInForm -->
-            <div class="formLogInContainer">
+            <div class="formLogInContainer" id="formLogInContainer">
                 <form action="" class="logInForm">
                     <h3 class="size-xxl">Log In</h3>
                     <label for="user__email" class="size-xl">Email</label>
-                    <input type="email" name="user__email" required>
+                    <input type="email" name="user__email" required id="input__logInEmail">
 
                     <label for="user__password" class="size-xl">Password</label>
-                    <input type="password" name="user__password" required>
+                    <input type="password" name="user__password" required id="input__logInPassword">
                 
-                    <div class="button">Log In</div>
+                    <div class="buttonContainer">
+                        <button type="submit" class="realButton" id="logIn__button"></button>
+                        <div class="button">Sign Up</div>
+                    </div>
                 </form>
 
                 <div class="linksContainer">
@@ -69,5 +86,9 @@
         </div>
 
     </section>
+
+    <script src="/javascript/dataBase.js"></script>
+    <script src="/javascript/plataform__enter.js"></script>
+
 </body>
 </html>

@@ -27,5 +27,6 @@ function playCarouselInfinite(){
     }, carouselInfinite__speed*1000+20);
 }
 
+
 playCarouselInfinite()
 
