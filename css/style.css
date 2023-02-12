@@ -30,7 +30,7 @@ html a {
 
 @font-face {
   font-family: fertigoPro;
-  src: url(/fonts/Fertigo_PRO.otf);
+  src: url(../../fonts/Fertigo_PRO.otf);
 }
 h1, h2, h3 {
   font-family: fertigoPro;
