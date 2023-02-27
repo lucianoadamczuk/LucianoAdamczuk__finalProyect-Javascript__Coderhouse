@@ -402,6 +402,7 @@ form .buttonContainer {
 form .buttonContainer .button {
   width: 100%;
   margin-top: 10px;
+  cursor: pointer;
 }
 form .buttonContainer .realButton {
   width: 100%;
@@ -409,6 +410,7 @@ form .buttonContainer .realButton {
   position: absolute;
   bottom: 0;
   opacity: 0;
+  cursor: pointer;
 }
 
 .formType2 {
