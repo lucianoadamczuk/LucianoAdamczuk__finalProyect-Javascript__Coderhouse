@@ -1,0 +1,61 @@
+.allCareers{
+    .titleContainer{
+        .title{
+            font-weight: bold;
+        }
+    }
+}
+
+.allCareers__contentContainer{
+    width: 100%;
+    min-height: 60vh;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+        
+        .careerBox{
+            width: 250px;
+            min-height: 150px;
+            height: auto;
+            margin-bottom: 5vh;
+            background-color: $color-secondary;
+            padding: 10px 20px 10px 20px;
+            border-radius: 10px;
+
+                .careerName, .careerDuration, .careerSubjects{
+                    width: 100%;
+                    height: calc(150px / 3);
+                    color: $color-primary;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .careerSubjectsContainer{
+                    height: 20vh;
+                    display: flex;
+                    background-color: $color-quintary;
+                    display: flex;
+                    flex-direction: column;
+                    overflow-y: scroll;
+
+                        p{
+                            margin-bottom: 5px;
+                        }
+                }
+
+        }
+}
+
+@media screen and (min-width: 1000px){
+    .allCareers__contentContainer{
+        .careerBox{
+            width: 30%;
+        }
+    }
+}

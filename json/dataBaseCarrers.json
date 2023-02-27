@@ -1,0 +1,71 @@
+[
+    {
+        "name": "Medicine",
+        "subjects": [
+            "ABC", "acb", "ABC", "abc"],
+        "duration": "8 years"
+    },
+
+    {
+        "name": "Mechanics",
+        "subjects": [
+            "ABC", "acb", "ABC", "abc"],
+        "duration": "8 years"
+    },
+
+    {
+        "name": "Human Resourses",
+        "subjects": [
+            "ABC", "acb", "ABC", "abc", "ABC", "acb", "ABC", "abc"],
+        "duration": "4 years"
+    },
+
+    {
+        "name": "Laws",
+        "subjects": [
+            "ABC", "acb", "ABC", "abc"],
+        "duration": "6 years"
+    },
+
+    {
+        "name": "Film Director",
+        "subjects": [
+            "ABC", "acb", "ABC", "abc"],
+        "duration": "4 years"
+    },
+
+    {
+        "name": "Psychology",
+        "subjects": [
+            "ABC", "acb", "ABC", "abc", "ABC", "acb", "ABC"],
+        "duration": "8 years"
+    },
+
+    {
+        "name": "Kinesiology",
+        "subjects": [
+            "ABC", "acb", "ABC", "abc"],
+        "duration": "8 years"
+    },
+
+    {
+        "name": "English Teachers",
+        "subjects": [
+            "ABC", "acb", "ABC", "abc"],
+        "duration": "4 years"
+    },
+
+    {
+        "name": "Russian Teachers",
+        "subjects": [
+            "ABC", "acb", "ABC"],
+        "duration": "5 years"
+    },
+
+    {
+        "name": "Architecture",
+        "subjects": [
+            "ABC", "acb", "ABC", "abc","ABC", "acb", "ABC", "abc"],
+        "duration": "6 years"
+    }
+]

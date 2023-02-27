@@ -41,7 +41,7 @@ plataform__enter_circleUp.addEventListener(`click`, e => {
     else{
         formLogInContainer.classList.add(`hideForm`)
         formLogInContainer.classList.remove(`showForm`)
-        plataform__enter_contentContainer.style.overflow = `scroll`
+        plataform__enter_contentContainer.style.overflowY = `scroll`
 
         setTimeout(() => {
             formLogInContainer.style.display = `none`
@@ -131,6 +131,7 @@ signUp__button.addEventListener(`click`, e =>{
         }, 1000);
     }
     else{
+        e.preventDefault()
 
         // collect the information of the inputs
         student.name =  input__signUpName.value
@@ -146,6 +147,12 @@ signUp__button.addEventListener(`click`, e =>{
         // Add the student to Local Storage database
         localStorage.setItem(`studentsList`, JSON.stringify(studentsList))
         
+        // from sweet alert library
+        swal({
+            title: "Welcome!",
+            text: "Your registration has been successful",
+            icon: "success",
+        })
         
     }
 })
