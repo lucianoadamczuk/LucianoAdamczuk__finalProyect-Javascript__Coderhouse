@@ -153,7 +153,10 @@ signUp__button.addEventListener(`click`, e =>{
             text: "Your registration has been successful",
             icon: "success",
         })
-        
+
+        setTimeout(() => {
+            window.location.href = "../pages/plataform__enter.html"
+        }, 2000);
     }
 })
 
