@@ -80,7 +80,7 @@ nav .navMobileStyle {
     height: 0;
   }
   to {
-    height: 40px;
+    height: 10vh;
   }
 }
 nav .linksContainer {
@@ -139,7 +139,6 @@ nav .showMenu {
   justify-content: center;
   align-items: center;
   background-color: #593528;
-  border-radius: 20%;
   animation-name: showMenu;
   animation-fill-mode: forwards;
   animation-duration: 0.2s;
