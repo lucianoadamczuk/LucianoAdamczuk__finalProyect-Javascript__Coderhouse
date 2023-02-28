@@ -3,7 +3,7 @@ const arrow__allCareers = document.getElementById(`arrow__allCareers`)
 const careerSubjectsContainer = document.querySelectorAll(`careerSubjectsContainer`)
 
 
-fetch("../json/dataBaseCarrers.json")
+fetch("../json/dataBaseCareers.json")
     .then((response) => {
         return response.json()
     })
